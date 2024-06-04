@@ -11,7 +11,7 @@ Function Invoke-ListGenericAllTenants {
     param($Request, $TriggerMetadata)
 
     $TableURLName = ($QueueItem.tolower().split('?').Split('/') | Select-Object -First 1).toString()
-    $QueueKey = (Invoke-ListCippQueue | Where-Object -Property Name -EQ $TableURLName | Select-Object -Last 1).RowKey
+    $QueueKey = (Get-CippQueue | Where-Object -Property Name -EQ $TableURLName | Select-Object -Last 1).RowKey
     Update-CippQueueEntry -RowKey $QueueKey -Status 'Started'
     $Table = Get-CIPPTable -TableName "cache$TableURLName"
     $fullUrl = "https://graph.microsoft.com/beta/$QueueItem"
