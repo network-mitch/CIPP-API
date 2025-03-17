@@ -27,4 +27,4 @@ jobs:
           app-name: 'cipp36utj-proc'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CDDD970AA32E453483E0CADE4B25C4F2 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D8305829F31B4473A116418C053ACF2F }}
